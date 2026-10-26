@@ -1,0 +1,33 @@
+name: InterAuth
+version: 1.2.0
+main: dev.intertime.auth.InterAuth
+api-version: "1.21"
+description: Авторизация /reg и /l с таймером, сессией на несколько дней и точками регистрации/входа
+commands:
+  reg:
+    description: Зарегистрироваться
+    usage: /reg <пароль> <пароль>
+    aliases: [register]
+  l:
+    description: Войти на сервер
+    usage: /l <пароль>
+    aliases: [login]
+  cp:
+    description: Сменить пароль
+    usage: /cp <старый> <новый>
+    aliases: [changepassword]
+  authset:
+    description: Задать точку регистрации или авторизации
+    usage: /authset <reg|login> [clear]
+    permission: interauth.admin
+  authreset:
+    description: Сбросить аккаунт игрока
+    usage: /authreset <ник>
+    permission: interauth.admin
+  authreload:
+    description: Перезагрузить настройки
+    usage: /authreload
+    permission: interauth.admin
+permissions:
+  interauth.admin:
+    default: op
